@@ -1412,6 +1412,25 @@ class PelTag
     const GPS_DIFFERENTIAL = 0x001E;
 
     /**
+     * Lens Make
+     *
+     * Format: {@link PelFormat::ASCII}.
+     *
+     * Components: unknown.
+     */
+    const LENS_MAKE = 0xA433;
+    
+    /**
+     * Lens Model
+     *
+     * Format: {@link PelFormat::ASCII}.
+     *
+     * Components: unknown.
+     */
+    const LENS_MODEL = 0xA434;
+
+
+    /**
      * Canon camera settings.
      *
      * Format: {@link PelFormat::SHORT}.
@@ -1966,6 +1985,8 @@ class PelTag
         self::IMAGE_UNIQUE_ID => 'ImageUniqueID',
         self::GAMMA => 'Gamma',
         self::PRINT_IM => 'PrintIM',
+        self::LENS_MAKE  => 'LensMake',
+        self::LENS_MODEL => 'LensModel',
         self::PREDICTOR => 'Predictor',
         self::EXTRA_SAMPLES => 'ExtraSamples',
         self::SAMPLE_FORMAT => 'SampleFormat',

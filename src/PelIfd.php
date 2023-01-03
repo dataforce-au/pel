@@ -265,7 +265,9 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
             PelTag::SUBJECT_DISTANCE_RANGE,
             PelTag::IMAGE_UNIQUE_ID,
             PelTag::INTEROPERABILITY_IFD_POINTER,
-            PelTag::GAMMA
+            PelTag::GAMMA,
+            PelTag::LENS_MAKE,
+            PelTag::LENS_MODEL,
         ],
         self::GPS => [
             PelTag::GPS_VERSION_ID,
