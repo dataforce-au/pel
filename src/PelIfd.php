@@ -622,12 +622,16 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
                     }
                     break;
                 case PelTag::JPEG_INTERCHANGE_FORMAT:
-                    $thumb_offset = $d->getLong($offset + 12 * $i + 8);
-                    $this->safeSetThumbnail($d, $thumb_offset, $thumb_length);
+                    // We having trouble with this method on some photos
+                    // since we don't need this header we dropped it
+                    //$thumb_offset = $d->getLong($offset + 12 * $i + 8);
+                    //$this->safeSetThumbnail($d, $thumb_offset, $thumb_length);
                     break;
                 case PelTag::JPEG_INTERCHANGE_FORMAT_LENGTH:
-                    $thumb_length = $d->getLong($offset + 12 * $i + 8);
-                    $this->safeSetThumbnail($d, $thumb_offset, $thumb_length);
+                    // We having trouble with this method on some photos
+                    // since we don't need this header we dropped it
+                    //$thumb_length = $d->getLong($offset + 12 * $i + 8);
+                    //$this->safeSetThumbnail($d, $thumb_offset, $thumb_length);
                     break;
                 default:
                     $this->loadSingleValue($d, $offset, $i, $tag);
