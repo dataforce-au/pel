@@ -153,11 +153,17 @@ class PelEntryRational extends PelEntryLong
             case PelTag::EXPOSURE_TIME:
                 // CC (e->components, 1, v);
                 // if (!v_rat.denominator) return (NULL);
-                if ($v[0] / $v[1] < 1) {
-                    return Pel::fmt('1/%d sec.', $v[1] / $v[0]);
-                } else {
-                    return Pel::fmt('%d sec.', $v[0] / $v[1]);
+                if ($v[1] != 0 && $v[0] != 0) {
+                    if ($v[0] / $v[1] < 1) {
+                        return Pel::fmt('1/%d sec.', $v[1] / $v[0]);
+                    } else {
+                        return Pel::fmt('%d sec.', $v[0] / $v[1]);
+                    }
                 }
+                else {
+                    return Pel::fmt('%d sec.', 0);
+                }
+                    
                 break;
             case PelTag::GPS_LATITUDE:
             case PelTag::GPS_LONGITUDE:
