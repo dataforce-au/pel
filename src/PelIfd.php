@@ -641,7 +641,7 @@ class PelIfd implements \IteratorAggregate, \ArrayAccess
             }
         }
 
-        $this->getOffsetToNextIfd($d, $offset, $n);
+    //    $this->getOffsetToNextIfd($d, $offset, $n);  // removed, rarely used, was causing infinite loop crash on some images with problem exif structure
         $this->checkIfLoadingFinished();
     }
 
